@@ -18,17 +18,19 @@ so the app's own repo and docs stay private).
 
 ## 1. Put it online (once, ~10 minutes)
 
+**Done 20 Sep 2026** — live at the address above. Steps kept for reference.
+
 1. github.com → **New repository** → name `fishing-book`, **Public**, no README → Create.
 2. In PowerShell:
 
 ```
-cd C:\Users\stric
-git clone https://github.com/stricko74/fishing-book.git
 robocopy C:\Users\stric\fish-logbook\site C:\Users\stric\fishing-book /E
 cd C:\Users\stric\fishing-book
+git init -b main
 git add -A
 git commit -m "Landing page"
-git push
+git remote add origin https://github.com/stricko74/fishing-book.git
+git push -u origin main
 ```
 
 3. The repo on github.com → **Settings → Pages** → Source **Deploy from a branch** → Branch
