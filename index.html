@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fishing Book — every catch records its own conditions</title>
+<meta name="description" content="Fishing Book is a free iPhone and iPad fishing logbook built in Western Australia. Every catch records its own conditions — tide from the official tables, wind, swell, moon, pressure and sea temperature — the moment you save it — plus the week ahead with solunar bite times. Your spots never leave your phone.">
+<meta property="og:title" content="Fishing Book — every catch records its own conditions">
+<meta property="og:description" content="Every catch records its own tide, wind, swell, moon, pressure and sea temp. Plus the week ahead with solunar bite times. Free, no ads, and your spots never leave your phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stricko74.github.io/fishing-book/">
+<meta property="og:image" content="https://stricko74.github.io/fishing-book/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f3d3e">
+<style>
+  :root {
+    --bg: #f6f8f8; --card: #ffffff; --ink: #14201f; --muted: #5a6b69; --line: #d9e1e0;
+    --teal: #2a9d8f; --deep: #0f3d3e; --deep-ink: #e6f2f1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1514; --card: #142120; --ink: #e8efee; --muted: #9db0ad; --line: #243432; --deep: #0a2a2b; }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color: var(--teal); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  header.hero { background: var(--deep); color: var(--deep-ink); padding: 56px 0 44px; }
+  .hero .wrap { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 720px) { .hero .wrap { grid-template-columns: 3fr 2fr; } }
+  .hero h1 { font-size: 40px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.5px; }
+  .hero p.lead { font-size: 20px; margin: 0 0 18px; color: #cfe3e1; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; padding: 0; list-style: none; }
+  .pills li { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+  .get { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .get img.badge { height: 54px; width: auto; }
+  .get a.text-badge { display: inline-block; background: #fff; color: var(--deep); font-weight: 700;
+    padding: 12px 18px; border-radius: 10px; text-decoration: none; }
+  .get .soon { font-weight: 600; color: #cfe3e1; }
+  .qr { text-align: center; }
+  .qr img { width: 180px; height: 180px; border-radius: 12px; background: #fff; padding: 8px; }
+  .qr small { display: block; color: #cfe3e1; margin-top: 6px; }
+  section { padding: 40px 0 8px; }
+  h2 { font-size: 26px; margin: 0 0 18px; letter-spacing: -0.3px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .callout { background: var(--card); border-left: 5px solid var(--teal); border-radius: 12px; padding: 18px 20px; }
+  .callout p { margin: 0; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0 14px; scroll-snap-type: x mandatory; }
+  .shots img { height: 460px; width: auto; border-radius: 18px; border: 1px solid var(--line); scroll-snap-align: start; flex: 0 0 auto; }
+  .credits p { color: var(--muted); font-size: 14.5px; margin: 0 0 8px; }
+  footer { border-top: 1px solid var(--line); margin-top: 36px; padding: 24px 0 40px; color: var(--muted); font-size: 14.5px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Fishing Book</h1>
+      <p class="lead">Every catch records its own conditions — tide, wind, swell, moon, pressure and sea temperature, filled in the moment you save the fish. A private logbook, built in Western Australia.</p>
+      <ul class="pills">
+        <li>Free</li><li>No ads</li><li>No account</li><li>iPhone &amp; iPad</li><li>Works offline</li>
+      </ul>
+      <div class="get" id="get">
+        <!-- badge.svg: Apple's official black "Download on the App Store" badge (see README); the text button shows until it exists -->
+        <a id="store-link" href="#" hidden><img class="badge" src="badge.svg" alt="Download on the App Store"
+           onerror="this.parentNode.classList.add('text-badge'); this.parentNode.textContent='Download on the App Store';"></a>
+        <span id="soon" class="soon">Coming soon to the App Store.</span>
+      </div>
+    </div>
+    <div class="qr" id="qr" hidden>
+      <!-- qr/site-qr.png encodes go/site-qr/ — made by scripts/make_channel_links.py -->
+      <img src="qr/site-qr.png" alt="QR code linking to Fishing Book on the App Store" onerror="document.getElementById('qr').hidden = true;">
+      <small>Point your camera at it</small>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card"><h3>Every catch records its own conditions</h3>
+        <p>Save a fish and the app files the conditions it was caught in: tide state and height, wind and gusts, swell and period, moon phase and solunar window, pressure and its trend, sea and air temperature. Over a season that becomes the answer to which tide, moon and wind actually catch fish.</p></div>
+      <div class="card"><h3>The week ahead, with bite times</h3>
+        <p>Seven days of wind, swell, tides and sea temperature for any of your marks or where you're standing, with the solunar major and minor bite periods for each day, a score for the next 48 hours built from your own catches, and the Bureau's coastal waters forecast.</p></div>
+      <div class="card"><h3>What actually caught fish</h3>
+        <p>Catches by tide, moon, solunar period, wind, swell, pressure trend and water temperature; your best marks and depths for this time of year; a PDF season report.</p></div>
+      <div class="card"><h3>Tide from the tables, not a model</h3>
+        <p>The tide on every catch comes from the Bureau's 2026 predictions for the nearest port — every WA and Queensland port, and every other state's standard ports. Slack, run, height, and the next turn.</p></div>
+      <div class="card"><h3>Seabed contours and every WA boat ramp</h3>
+        <p>Depth contours from Perth to Broome and out around the islands, plus the Sunshine Coast. All 190-odd Department of Transport ramps, with lanes, jetties, trailer bays and the tide there now.</p></div>
+      <div class="card"><h3>Marks the way your plotter shows them</h3>
+        <p>Positions read and type as S32°35.922' E115°37.681' — the same boxes as your Garmin. Import a GPX of your marks and the app names the spot for you when you are on it.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Your spots stay on your phone</h2>
+    <div class="callout">
+      <p>There is no account, no feed, no analytics and no server of ours. Catches, photos, positions and notes live on the phone. The only thing that ever leaves it is a position rounded to the nearest kilometre, sent to a weather service to fetch the conditions — so an exact mark never leaves the phone, and mark names, notes and photos never do either. <a href="https://docs.google.com/document/d/e/2PACX-1vTtFQir34pVQ4NUEc1ZtVXbTZe6N0DA0IsiBX_ZASrpDp0cOUeYycDwFbYxtIt83tv-iTi_0PPH5Igk/pub">The privacy policy</a> says exactly what is sent and to whom.</p>
+    </div>
+  </section>
+
+  <section id="screens">
+    <h2>Have a look</h2>
+    <div class="shots">
+      <!-- drop screenshots into screens/1.jpg … screens/6.jpg; missing ones hide themselves -->
+      <img src="screens/2.jpg" alt="A catch card with tide, wind, swell, moon and pressure recorded" onerror="this.remove()">
+      <img src="screens/6.jpg" alt="The week ahead — wind, swell, tides and bite times" onerror="this.remove()">
+      <img src="screens/4.jpg" alt="Insights — catches by water temperature and moon" onerror="this.remove()">
+      <img src="screens/1.jpg" alt="The chart with seabed contours" onerror="this.remove()">
+      <img src="screens/5.jpg" alt="Every WA boat ramp on the chart, with its facilities" onerror="this.remove()">
+      <img src="screens/3.jpg" alt="The logbook" onerror="this.remove()">
+    </div>
+  </section>
+
+  <section class="credits">
+    <h2>Where the data comes from</h2>
+    <p>Tide predictions © Commonwealth of Australia, Bureau of Meteorology (WA tables supplied by the Department of Transport and Major Infrastructure; Queensland tables by Maritime Safety Queensland, CC BY 4.0). This product is based on Bureau of Meteorology information that has subsequently been modified; the Bureau does not necessarily support or endorse, or have any connection with, the product.</p>
+    <p>Weather and marine conditions: Open-Meteo (CC BY 4.0). Coastal waters forecasts: Bureau of Meteorology. Sea surface temperature: NASA Worldview / GIBS. Currents: IMOS OceanCurrent via the AODN (IMOS is enabled by NCRIS), CC BY 4.0.</p>
+    <p>Seabed imagery: WA Department of Transport bathymetry via Landgate SLIP. Depth contours: GMRT Synthesis / GEBCO. Boat ramps: WA Department of Transport, Public Boat Ramps (DOT-033) via Landgate SLIP, CC BY. Ocean base map: Esri, GEBCO, NOAA, Garmin and others. Map data: Apple Maps.</p>
+    <p>None of the chart layers are for navigation. Fishing rules are transcribed from each state department's published tables and go out of date — check the department before you keep a fish you are unsure of.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Fishing Book</span>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vTtFQir34pVQ4NUEc1ZtVXbTZe6N0DA0IsiBX_ZASrpDp0cOUeYycDwFbYxtIt83tv-iTi_0PPH5Igk/pub">Privacy policy</a>
+    <a href="mailto:stricko74@bigpond.com?subject=Fishing%20Book">Support: stricko74@bigpond.com</a>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+  // Launch-day values live in config.js, shared with every /go/ link.
+  var storeLink = window.fishingBookStoreLink ? window.fishingBookStoreLink('site') : null;
+  if (storeLink) {
+    var link = document.getElementById('store-link');
+    link.href = storeLink; link.hidden = false;
+    document.getElementById('soon').hidden = true;
+    document.getElementById('qr').hidden = false;
+  }
+  // No screenshots dropped in yet → no empty "Have a look" heading.
+  window.addEventListener('load', function () {
+    var shots = document.querySelector('.shots');
+    if (shots && !shots.querySelector('img')) document.getElementById('screens').hidden = true;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "_about": "One entry per place the app gets promoted. Run: python scripts/make_channel_links.py — it writes site/go/<slug>/index.html, site/qr/<slug>.png and docs/CHANNEL_LINKS.md. Campaign names (ct) are what App Analytics reports under: 30 characters at most, never reuse one for a different channel.",
+  "baseUrl": "https://stricko74.github.io/fishing-book/",
+  "channels": [
+    { "slug": "fb",      "ct": "fb-groups",      "where": "Facebook group posts (Perth & WA Fishing Reports, Fishing Perth and WA – Land based, regional groups)" },
+    { "slug": "fw",      "ct": "fishwrecked",    "where": "The Fishwrecked forum thread" },
+    { "slug": "rfw",     "ct": "recfishwest",    "where": "The link to give Recfishwest for a mention" },
+    { "slug": "wa",      "ct": "western-angler", "where": "The link to give Western Angler" },
+    { "slug": "card",    "ct": "tackle-card",    "where": "QR code on the tackle-shop counter card", "qr": true },
+    { "slug": "clubs",   "ct": "clubs",          "where": "Club newsletters and show-and-tells", "qr": true },
+    { "slug": "yt",      "ct": "youtube",        "where": "YouTube video descriptions" },
+    { "slug": "reddit",  "ct": "reddit",         "where": "r/perth, r/Fishing_Australia posts" },
+    { "slug": "mates",   "ct": "mates",          "where": "Texts and emails you send mates yourself" },
+    { "slug": "site-qr", "ct": "site-qr",        "where": "The QR code on the landing page (for desktop visitors)", "qr": true }
+  ]
+}
