@@ -4,6 +4,23 @@ Static files, no build step, hosted free on GitHub Pages at
 **https://stricko74.github.io/fishing-book/** (a separate PUBLIC repo, `stricko74/fishing-book`,
 so the app's own repo and docs stay private).
 
+## Two repos, two folders — know which one you are in
+
+| Folder | Repo | Visibility | What it is |
+|---|---|---|---|
+| `C:\Users\stric\fish-logbook` | `stricko74/fish-logbook` | **private** | the Expo app, all docs, and `site/` — the SOURCE |
+| `C:\Users\stric\fishing-book` | `stricko74/fishing-book` | **public** | a robocopy of `site/`, nothing else — the PUBLISHED copy |
+
+Two repos because GitHub Pages serves only from a public repo on the free plan, and the app repo
+must stay private. The names differ because `fish-logbook` is the original project slug (still the
+app's slug, scheme and database name) while the app was later renamed *Fishing Book*, which is what
+the public URL had to read.
+
+**Never edit anything in `C:\Users\stric\fishing-book`.** It is a copy. Edit `site/` in this repo,
+then robocopy — a direct edit there is silently overwritten on the next copy, and is not in the
+private repo's history either. The only commands that belong in that folder are the
+`git add` / `commit` / `push` after a robocopy.
+
 | File | What it is |
 |---|---|
 | `index.html` | The landing page. |

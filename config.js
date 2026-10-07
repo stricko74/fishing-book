@@ -6,7 +6,7 @@ window.FISHING_BOOK = {
   appStoreId: '6810498075',
   // true once the app is actually on the App Store. Until then the page says
   // "Coming soon" and every /go/ link lands on the page instead of the store.
-  live: false,
+  live: true,
   // The pt=… number from any campaign link App Store Connect generates
   // (Analytics → Acquisition → Campaigns — it appears once the live app has a
   // few downloads). Empty = plain store links, unattributed. Never guess it:
