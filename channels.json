@@ -11,6 +11,7 @@
     { "slug": "yt",      "ct": "youtube",        "where": "YouTube video descriptions" },
     { "slug": "reddit",  "ct": "reddit",         "where": "r/perth, r/Fishing_Australia posts" },
     { "slug": "mates",   "ct": "mates",          "where": "Texts and emails you send mates yourself" },
+    { "slug": "ig",      "ct": "instagram",      "where": "Instagram bio link and Story link stickers" },
     { "slug": "site-qr", "ct": "site-qr",        "where": "The QR code on the landing page (for desktop visitors)", "qr": true }
   ]
 }
