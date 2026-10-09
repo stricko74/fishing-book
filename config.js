@@ -11,7 +11,7 @@ window.FISHING_BOOK = {
   // (Analytics → Acquisition → Campaigns — it appears once the live app has a
   // few downloads). Empty = plain store links, unattributed. Never guess it:
   // a wrong pt credits the downloads to someone else's account.
-  providerToken: '',
+  providerToken: '129280875',
 };
 
 // Where a /go/<slug>/ link sends someone, for the campaign `ct`.
