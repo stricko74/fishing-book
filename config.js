@@ -19,7 +19,9 @@ window.fishingBookStoreLink = function (ct) {
   const c = window.FISHING_BOOK || {};
   if (!c.live || !/^\d{6,}$/.test(c.appStoreId || '')) return null;
   if (/^\d{4,}$/.test(c.providerToken || '')) {
-    return 'https://apps.apple.com/app/apple-store/id' + c.appStoreId +
+    // /au/ storefront: without a country a web browser lands on the US store, where an
+    // Australia-only app is "page can't be found" (10 Oct 2026). pt/ct still carry through.
+    return 'https://apps.apple.com/au/app/fishing-book/id' + c.appStoreId +
       '?pt=' + c.providerToken + '&ct=' + encodeURIComponent(String(ct).slice(0, 30)) + '&mt=8';
   }
   return 'https://apps.apple.com/au/app/fishing-book/id' + c.appStoreId;
